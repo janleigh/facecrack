@@ -1,0 +1,4 @@
+# Directories
+.yarn/
+bin/
+node_modules/

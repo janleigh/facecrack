@@ -1,0 +1,33 @@
+{
+	"name": "facecrack",
+	"version": "0.0.1",
+	"author": {
+		"name": "Jan Leigh Muñoz",
+		"email": "janleigh@proton.me"
+	},
+	"type": "module",
+	"license": "MIT",
+	"main": "bin/index.js",
+	"scripts": {
+		"build": "yarn build:clean && yarn compile",
+		"build:production": "yarn build:clean && yarn format:check && yarn lint && yarn compile",
+		"build:clean": "yarn rimraf ./bin/",
+		"compile": "npx sucrase src -d bin --transforms typescript",
+		"format": "prettier --write src",
+		"format:check": "prettier --check src"
+	},
+	"dependencies": {
+		"chalk": "^5.2.0",
+		"node-fetch": "^3.3.0",
+		"puppeteer": "^19.4.1",
+		"yargs": "^17.6.2"
+	},
+	"devDependencies": {
+		"@types/node": "^18.11.16",
+		"@types/yargs": "^17.0.17",
+		"prettier": "^2.8.1",
+		"rimraf": "^3.0.2",
+		"sucrase": "^3.29.0"
+	},
+	"packageManager": "yarn@3.3.0"
+}
