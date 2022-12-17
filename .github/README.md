@@ -30,7 +30,22 @@ this readme sucks
 
 ## :wrench: <samp>SETUP</samp>
 
-   > **TBD.**
+   You must have [Node.js 16+](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed in your system before proceeding.
+
+   ```sh
+   # Install the dependencies.
+   $ yarn install
+
+   # Compile facecrack.
+   $ yarn build
+
+   # Run facecrack.
+   $ node ./bin/index.js -t <target> -w <path/to/wordlist>
+   # Run facecrack with 2000ms delay.
+   $ node ./bin/index.js -t <target> -w <path/to/wordlist> -d 2000
+   # Run facecrack with a custom Chrome/Chromium executable
+   $ node ./bin/index.js -t <target> -w <path/to/wordlist> --exec /usr/sbin/google-chrome-stable
+   ```
 
 ## :money_with_wings: <samp>TIP JAR</samp>
 
