@@ -11,10 +11,10 @@ this readme sucks
 <div align="center">
    <p></p>
    <a href="https://github.com/janleigh/facecrack/network/members">
-      <img src="https://img.shields.io/github/forks/janleigh/portfolio?color=f7be95&labelColor=1E1E28&style=for-the-badge">
+      <img src="https://img.shields.io/github/forks/janleigh/facecrack?color=f7be95&labelColor=1E1E28&style=for-the-badge">
    </a>
    <a href="https://github.com/janleigh/facecrack/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/portfolio?color=C9CBFF&labelColor=1E1E28&style=for-the-badge">
+      <img src="https://img.shields.io/github/stars/janleigh/facecrack?color=C9CBFF&labelColor=1E1E28&style=for-the-badge">
    </a>
    <br>
 </div>
