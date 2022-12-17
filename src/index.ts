@@ -26,6 +26,13 @@ const opt = yargs(process.argv.slice(2))
 		type: "string",
 		demandOption: true
 	})
+	.option("exec", {
+		alias: "executable",
+		description: "The path to the Chrome executable.",
+		type: "string",
+		default: "/usr/sbin/google-chrome-stable",
+		demandOption: false
+	})
 	.option("d", {
 		alias: "delay",
 		description: "The delay between each password attempt.",
@@ -39,6 +46,7 @@ const opt = yargs(process.argv.slice(2))
 const main = async () => {
 	const target = opt.t ?? opt.target;
 	const wordlist = opt.w ?? (opt.wl ?? opt.wordlist);
+	const executable = opt.exec ?? opt.executable;
 	const delayTime = opt.d ?? Number(opt.delay);
 	const opts = [target, wordlist];
 	let passwds = [];
@@ -63,7 +71,7 @@ const main = async () => {
 				console.log(`[ ${chalk.yellow("INFO")} ] ` + `Trying password ${chalk.bold(passwd)}.`);
 
 				const browser = await puppeteer.launch({
-					executablePath: "/usr/sbin/google-chrome-stable"
+					executablePath: executable,
 				});
 				const loginTest = login(target, passwd, browser);
 

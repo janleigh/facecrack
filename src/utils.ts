@@ -19,15 +19,9 @@ export const checkInternet = async (): Promise<boolean> => {
 
 export const login = async (target: string, password: string, browser: Browser): Promise<boolean> => {
 	const url = "https://www.facebook.com";
-
-	const form = new URLSearchParams();
-	form.append("email", target);
-	form.append("pass", password);
-
 	const page = await browser.newPage();
+	
 	await page.goto(url);
-
-	// await page.screenshot({ path: `assets/facebook-${password}.png` });
 
 	await page.setUserAgent(getRandomUserAgent());
 	await page.type("#email", target);
