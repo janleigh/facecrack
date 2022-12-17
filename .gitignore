@@ -14,3 +14,7 @@
 # Directories
 bin/*
 node_modules/*
+
+# Files
+assets/priv.txt
+assets/screenshot-*.*
