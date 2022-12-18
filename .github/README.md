@@ -43,7 +43,7 @@ this readme sucks
    $ node ./bin/index.js -t <target> -w <path/to/wordlist>
    # Run facecrack with 2000ms delay.
    $ node ./bin/index.js -t <target> -w <path/to/wordlist> -d 2000
-   # Run facecrack with a custom Chrome/Chromium executable
+   # Run facecrack with a custom Chrome/Chromium executable.
    $ node ./bin/index.js -t <target> -w <path/to/wordlist> --exec /usr/sbin/google-chrome-stable
    ```
 
