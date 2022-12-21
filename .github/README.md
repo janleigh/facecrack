@@ -18,13 +18,6 @@ this readme sucks
    </a>
    <br>
 </div>
-<div align="center">
-   <p></p>
-   <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://discord.com/api/guilds/853812920919261235/embed.png?style=banner2">
-   </a>
-   <br>
-</div>
 
 ---
 
