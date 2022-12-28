@@ -22,7 +22,7 @@ export const checkInternet = async (): Promise<boolean> => {
 export const login = async (target: string, password: string, browser: Browser): Promise<boolean> => {
 	const url = "https://www.facebook.com";
 	const page = await browser.newPage();
-	
+
 	await page.goto(url);
 
 	await page.setUserAgent(getRandomUserAgent());

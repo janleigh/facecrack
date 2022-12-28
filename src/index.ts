@@ -57,7 +57,7 @@ const main = async () => {
 		}
 
 		if (wordlist) {
-			if (!(fs.existsSync(wordlist))) {
+			if (!fs.existsSync(wordlist)) {
 				console.log(redAst + "The wordlist file does not exist.");
 				process.exit(1);
 			}
@@ -71,7 +71,7 @@ const main = async () => {
 
 				console.log(yellow + `Trying password ${chalk.bold(passwd)}.`);
 
-				if (!(fs.existsSync(executable))) {
+				if (!fs.existsSync(executable)) {
 					console.log(redAst + "The specified Chrome/Chromium executable does not exist.");
 					process.exit(1);
 				}
