@@ -1,6 +1,6 @@
 {
 	"name": "facecrack",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": {
 		"name": "Jan Leigh Muñoz",
 		"email": "janleigh@proton.me"
@@ -8,12 +8,9 @@
 	"type": "module",
 	"license": "MIT",
 	"main": "bin/index.js",
-	"bin": {
-		"facecrack": "bin/index.js"
-	},
+	"bin": "bin/index.js",
 	"scripts": {
 		"build": "yarn build:clean && yarn format:check && yarn compile",
-		"build:production": "yarn build:clean && yarn format:check && yarn lint && yarn compile",
 		"build:clean": "yarn rimraf ./bin/",
 		"compile": "npx sucrase src -d bin --transforms typescript",
 		"format": "prettier --write src",
@@ -32,5 +29,5 @@
 		"rimraf": "^3.0.2",
 		"sucrase": "^3.29.0"
 	},
-	"packageManager": "yarn@3.3.0"
+	"packageManager": "yarn@3.4.1"
 }

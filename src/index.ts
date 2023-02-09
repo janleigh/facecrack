@@ -29,7 +29,6 @@ const opt = yargs(process.argv.slice(2))
 		alias: "executable",
 		description: "The path to the Chrome executable.",
 		type: "string",
-		default: "/usr/sbin/google-chrome-stable",
 		demandOption: false
 	})
 	.option("d", {
@@ -71,14 +70,26 @@ const main = async () => {
 
 				console.log(yellow + `Trying password ${chalk.bold(passwd)}.`);
 
-				if (!fs.existsSync(executable)) {
-					console.log(redAst + "The specified Chrome/Chromium executable does not exist.");
-					process.exit(1);
+				if (executable) {
+					if (!fs.existsSync(String(executable))) {
+						console.log(redAst + "The specified Chrome/Chromium executable does not exist.");
+						process.exit(1);
+					}
 				}
 
 				const browser = await puppeteer.launch({
-					executablePath: executable
+					executablePath: executable ? String(executable) : puppeteer.executablePath(),
+					args: [
+						"--disable-gpu",
+						"--disable-dev-shm-usage",
+						"--disable-setuid-sandbox",
+						"--no-first-run",
+						"--no-sandbox",
+						"--no-zygote",
+						"--single-process"
+					]
 				});
+
 				const loginTest = login(target, passwd, browser);
 
 				if ((await loginTest) === false) {
@@ -87,6 +98,7 @@ const main = async () => {
 				} else {
 					console.log(green + `${passwd} is correct.`);
 					console.log(pwned + `Successfully logged in as ${target} with password ${chalk.bold(passwd)}.`);
+
 					process.exit(0);
 				}
 

@@ -16,5 +16,5 @@ bin/*
 node_modules/*
 
 # Files
-assets/priv.txt
+assets/private-wl.txt
 assets/screenshot-*.*

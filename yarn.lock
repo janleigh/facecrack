@@ -369,6 +369,8 @@ __metadata:
     rimraf: ^3.0.2
     sucrase: ^3.29.0
     yargs: ^17.6.2
+  bin:
+    facecrack: bin/index.js
   languageName: unknown
   linkType: soft
 

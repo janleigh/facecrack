@@ -49,7 +49,6 @@ this readme sucks
    |  Donate With  |                      Address                       |
    | :-----------: | :------------------------------------------------: |
    |     Ko-fi     |     [Click Here](https://ko-fi.com/M4M272EAY)      |
-   |    PayPal     | [Click Here](https://paypal.me/JanLeighAugustineM) |
 
 
 <!--- LICENSE --->
@@ -57,5 +56,5 @@ this readme sucks
    This project is licensed under the [MIT](https://github.com/janleigh/facecrack/blob/master/.github/LICENSE.md) license.
 
 <p align="center">
-   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/footers/gray0_ctp_on_line.svg?sanitize=true"/>
+   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true"/>
 </p>
