@@ -1,5 +1,10 @@
+import chalk from "chalk";
 import fetch from "node-fetch";
 import { Browser } from "puppeteer";
+
+export const boldText = (str: string): string => {
+	return chalk.bold(str);
+};
 
 export const getRandomUserAgent = (): string => {
 	const headers = [

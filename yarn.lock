@@ -366,7 +366,6 @@ __metadata:
     node-fetch: ^3.3.0
     prettier: ^2.8.1
     puppeteer: ^19.4.1
-    rimraf: ^3.0.2
     sucrase: ^3.29.0
     yargs: ^17.6.2
   bin:
@@ -777,7 +776,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:3.0.2, rimraf@npm:^3.0.2":
+"rimraf@npm:3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:

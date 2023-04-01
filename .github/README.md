@@ -2,8 +2,6 @@
 this readme sucks
 --->
 
-<h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
-
 <!--- TITLE --->
 <h1 align="center"> facecrack </h1>
 
@@ -23,7 +21,7 @@ this readme sucks
 
 ## :wrench: <samp>SETUP</samp>
 
-   You must have [Node.js 16+](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed in your system before proceeding.
+   You must have [Node.js 18+](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) installed in your system before proceeding.
 
    ```sh
    # Install the dependencies.
@@ -50,6 +48,8 @@ this readme sucks
    | :-----------: | :------------------------------------------------: |
    |     Ko-fi     |     [Click Here](https://ko-fi.com/M4M272EAY)      |
 
+## :warning: <samp>DISCLAIMER</samp>
+   This project is intended for academic and research purposes only. The use of this tool for any unlawful activity is strictly prohibited.
 
 <!--- LICENSE --->
 ## :scroll: <samp>LICENSE</samp>
